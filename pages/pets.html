@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宠物 - 个人博客网站</title>
+    <!-- 引入Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- 引入主样式 -->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!-- 引入宠物页面样式 -->
+    <link rel="stylesheet" href="../assets/css/pets.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <a href="../index.html">个人博客</a>
+                </div>
+                <div class="menu" id="main-menu">
+                    <ul>
+                        <li><a href="../index.html"><i class="fas fa-home"></i> 首页</a></li>
+                        <li><a href="about.html"><i class="fas fa-user"></i> 我的</a></li>
+                        <li><a href="journey.html"><i class="fas fa-map-marker-alt"></i> 旅程</a></li>
+                        <li><a href="gallery.html"><i class="fas fa-images"></i> 相册</a></li>
+                        <li><a href="reading.html"><i class="fas fa-book"></i> 读书</a></li>
+                        <li><a href="hobbies.html"><i class="fas fa-star"></i> 兴趣爱好</a></li>
+                        <li><a href="pets.html" class="active"><i class="fas fa-paw"></i> 宠物</a></li>
+                    </ul>
+                </div>
+                <div class="mobile-menu-btn" id="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主要内容区域 -->
+    <main>
+        <!-- 宠物头部 -->
+        <section class="pets-header">
+            <div class="container">
+                <h1>我的宠物家族</h1>
+                <p>记录毛孩子们的成长故事和快乐时光</p>
+            </div>
+        </section>
+
+        <!-- 宠物档案卡片 -->
+        <section class="pets-profile">
+            <div class="container">
+                <div class="pets-grid" id="pets-grid">
+                    <!-- 宠物卡片将通过JavaScript动态生成 -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 宠物详情内容 -->
+        <section class="pet-details-section" id="pet-details-section">
+            <div class="container">
+                <!-- 宠物选项卡 -->
+                <div class="pet-tabs">
+                    <button class="tab-btn active" data-tab="profile">宠物档案</button>
+                    <button class="tab-btn" data-tab="growth">成长记录</button>
+                    <button class="tab-btn" data-tab="photos">照片合集</button>
+                    <button class="tab-btn" data-tab="moments">日常点滴</button>
+                </div>
+                
+                <!-- 宠物详情内容 -->
+                <div class="pet-details-content" id="pet-details-content">
+                    <!-- 默认显示第一只宠物的档案 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>个人博客</h3>
+                    <p>记录生活的点滴，分享美好的瞬间</p>
+                </div>
+                <div class="footer-links">
+                    <ul>
+                        <li><a href="../index.html">首页</a></li>
+                        <li><a href="about.html">关于我</a></li>
+                        <li><a href="journey.html">旅行足迹</a></li>
+                        <li><a href="gallery.html">相册</a></li>
+                        <li><a href="reading.html">读书笔记</a></li>
+                        <li><a href="hobbies.html">兴趣爱好</a></li>
+                        <li><a href="pets.html">宠物</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-weibo"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 个人博客网站. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 返回顶部按钮 -->
+    <button class="back-to-top" id="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 引入主JavaScript -->
+    <script src="../assets/js/main.js"></script>
+    <!-- 引入宠物页面JavaScript -->
+    <script src="../assets/js/pets.js"></script>
+</body>
+</html>

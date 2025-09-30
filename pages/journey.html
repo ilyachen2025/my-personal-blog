@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅程 - 我的个人博客网站</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/journey.css">
+    <!-- Leaflet地图库 -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">我的</a></li>
+                <li><a href="journey.html" class="active">旅程</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="reading.html">读书</a></li>
+                <li><a href="hobbies.html">兴趣爱好</a></li>
+                <li><a href="pets.html">宠物</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="journey-section">
+            <div class="journey-header">
+                <h1>我的旅行足迹</h1>
+                <p>记录我走过的每一个地方，每一段美好的回忆</p>
+                <button id="add-journey-btn" class="btn-add-journey">
+                    <i class="fas fa-plus"></i> 添加旅程
+                </button>
+            </div>
+
+            <div class="journey-container">
+                <div class="map-container">
+                    <div id="map"></div>
+                    <div class="map-legend">
+                        <h3>地图标记说明</h3>
+                        <div class="legend-item">
+                            <span class="legend-marker visited"></span>
+                            <span>已访问</span>
+                        </div>
+                        <div class="legend-item">
+                            <span class="legend-marker plan"></span>
+                            <span>计划访问</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey-list">
+                    <h2>旅行记录</h2>
+                    <div class="journey-items">
+                        <!-- 旅行项目将通过JavaScript动态生成 -->
+                        <div class="journey-item">
+                            <div class="journey-image">
+                                <img src="../assets/images/beijing.jpg" alt="北京">
+                            </div>
+                            <div class="journey-info">
+                                <h3>北京之旅</h3>
+                                <p class="journey-date">2023年5月</p>
+                                <p class="journey-desc">游览了故宫、长城、颐和园等著名景点，感受了北京的历史文化底蕴。</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-image">
+                                <img src="../assets/images/shanghai.jpg" alt="上海">
+                            </div>
+                            <div class="journey-info">
+                                <h3>上海之行</h3>
+                                <p class="journey-date">2022年10月</p>
+                                <p class="journey-desc">参观了外滩、东方明珠，体验了上海的现代都市魅力。</p>
+                            </div>
+                        </div>
+                        <div class="journey-item">
+                            <div class="journey-image">
+                                <img src="../assets/images/hangzhou.jpg" alt="杭州">
+                            </div>
+                            <div class="journey-info">
+                                <h3>杭州西湖</h3>
+                                <p class="journey-date">2021年7月</p>
+                                <p class="journey-desc">欣赏了西湖美景，品尝了当地美食，感受了江南水乡的韵味。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">首页</a>
+                <a href="about.html">我的</a>
+                <a href="journey.html">旅程</a>
+                <a href="gallery.html">相册</a>
+                <a href="reading.html">读书</a>
+                <a href="hobbies.html">兴趣爱好</a>
+                <a href="pets.html">宠物</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 我的个人博客网站. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 添加旅程模态框 -->
+    <div id="journey-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>添加新旅程</h2>
+            <form id="journey-form">
+                <div class="form-group">
+                    <label for="journey-title">旅程标题</label>
+                    <input type="text" id="journey-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="journey-location">地点</label>
+                    <input type="text" id="journey-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="journey-date">日期</label>
+                    <input type="text" id="journey-date" placeholder="YYYY年MM月" required>
+                </div>
+                <div class="form-group">
+                    <label for="journey-desc">描述</label>
+                    <textarea id="journey-desc" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="journey-image">上传图片</label>
+                    <input type="file" id="journey-image">
+                </div>
+                <div class="form-group">
+                    <label for="journey-lat">纬度</label>
+                    <input type="number" step="0.000001" id="journey-lat" required>
+                </div>
+                <div class="form-group">
+                    <label for="journey-lng">经度</label>
+                    <input type="number" step="0.000001" id="journey-lng" required>
+                </div>
+                <button type="submit" class="btn-submit">保存旅程</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/journey.js"></script>
+</body>
+</html>

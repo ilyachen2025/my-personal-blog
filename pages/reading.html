@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>读书 - 我的个人博客网站</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/reading.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="about.html">我的</a></li>
+                <li><a href="journey.html">旅程</a></li>
+                <li><a href="gallery.html">相册</a></li>
+                <li><a href="reading.html" class="active">读书</a></li>
+                <li><a href="hobbies.html">兴趣爱好</a></li>
+                <li><a href="pets.html">宠物</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reading-section">
+            <div class="reading-header">
+                <h1>读书笔记</h1>
+                <p>记录我的阅读心得和感悟</p>
+            </div>
+
+            <div class="reading-container">
+                <div class="reading-sidebar">
+                    <div class="search-box">
+                        <input type="text" id="book-search" placeholder="搜索书籍...">
+                        <button id="search-btn"><i class="fas fa-search"></i></button>
+                    </div>
+                    
+                    <div class="categories">
+                        <h3>分类</h3>
+                        <ul>
+                            <li><a href="#" class="active" data-category="all">全部</a></li>
+                            <li><a href="#" data-category="fiction">小说</a></li>
+                            <li><a href="#" data-category="non-fiction">非虚构</a></li>
+                            <li><a href="#" data-category="psychology">心理学</a></li>
+                            <li><a href="#" data-category="self-help">自我提升</a></li>
+                            <li><a href="#" data-category="technology">技术</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tags">
+                        <h3>标签</h3>
+                        <div class="tag-list">
+                            <a href="#" class="tag" data-tag="all">全部</a>
+                            <a href="#" class="tag" data-tag="经典">经典</a>
+                            <a href="#" class="tag" data-tag="推荐">推荐</a>
+                            <a href="#" class="tag" data-tag="热门">热门</a>
+                            <a href="#" class="tag" data-tag="励志">励志</a>
+                            <a href="#" class="tag" data-tag="编程">编程</a>
+                            <a href="#" class="tag" data-tag="历史">历史</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reading-content">
+                    <div class="books-grid">
+                        <!-- 书籍笔记将通过JavaScript动态生成 -->
+                    </div>
+                    
+                    <div class="loading-more">
+                        <div class="loading"></div>
+                        <p>加载更多书籍...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="../index.html">首页</a>
+                <a href="about.html">我的</a>
+                <a href="journey.html">旅程</a>
+                <a href="gallery.html">相册</a>
+                <a href="reading.html">读书</a>
+                <a href="hobbies.html">兴趣爱好</a>
+                <a href="pets.html">宠物</a>
+            </div>
+            <div class="footer-social">
+                <a href="#"><i class="fab fa-weixin"></i></a>
+                <a href="#"><i class="fab fa-weibo"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; 2023 我的个人博客网站. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 书籍详情模态框 -->
+    <div id="book-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="book-detail">
+                <div class="book-cover">
+                    <img id="modal-book-cover" src="" alt="书籍封面">
+                </div>
+                <div class="book-info">
+                    <h2 id="modal-book-title"></h2>
+                    <p id="modal-book-author"></p>
+                    <div class="book-meta">
+                        <span id="modal-book-category"></span>
+                        <span id="modal-book-date"></span>
+                    </div>
+                    <div class="book-rating">
+                        <span>评分：</span>
+                        <div id="modal-book-rating"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="book-notes">
+                <h3>读书笔记</h3>
+                <div id="modal-book-content"></div>
+            </div>
+            <div class="book-tags">
+                <span>标签：</span>
+                <div id="modal-book-tags"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/reading.js"></script>
+</body>
+</html>
